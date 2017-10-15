@@ -15,6 +15,11 @@ class CrazyJacksonTest extends FunSuite {
     val innerMap = InnerMap(Map(1L->1L))
     val serialized = mapper.writeValueAsString(innerMap)
     val newObj = mapper.readValue(serialized, classOf[InnerMap])
+
+    println(serialized)
+    println(innerMap)
+    println(newObj)
+
     assert(newObj.map == innerMap.map)
 
   }
